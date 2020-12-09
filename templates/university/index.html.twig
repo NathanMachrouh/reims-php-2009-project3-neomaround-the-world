@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UniversityController!{% endblock %}
+{% block title %}Hello CountryController!{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>All Universities</h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ '/home/wilder/Bureau/Projet3Neoma'RoundtheWorld/reims-php-2009-project3-neomaround-the-world/src/Controller/UniversityController.php'|file_link(0) }}">src/Controller/UniversityController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/wilder/Bureau/Projet3Neoma'RoundtheWorld/reims-php-2009-project3-neomaround-the-world/templates/university/index.html.twig'|file_link(0) }}">templates/university/index.html.twig</a></code></li>
+    {% for university in universities %}
+        <li><a href="{{ path("university_show", { id: university.id }) }}"> {{ university.name }}</li>
+    {% endfor %}    
     </ul>
+    <a href="{{ path('home') }}">
+        Retour à l'accueil
+    </a>
 </div>
 {% endblock %}

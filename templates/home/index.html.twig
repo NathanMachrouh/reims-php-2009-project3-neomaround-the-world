@@ -17,6 +17,12 @@
         accessToken: 'pk.eyJ1IjoiYWRlbGluZWI1MSIsImEiOiJja2loOWdlcmswNWNnMnptd2Jvb3l6MDA3In0.XbM3nj9P9Gd0daPf7tt4sg'
         }).addTo(mymap);
 
+
+{% block body %}
+    <h1>Welcome on your project 3</h1>
+    <img src="https://media.giphy.com/media/hS58Kb2OOCMPS/giphy.gif" alt="Dewey dancing"></br>
+    <a href="{{ path('country') }}">All country</a></br>
+    <a href="{{ path('university') }}">All university</a>
         var marker = L.marker([49.23840602490704, 4.003347257434664]).addTo(mymap);
 
         var circle = L.circle([49.25, 4.0333], {
@@ -31,4 +37,5 @@
         circle.bindPopup("Welcome to Reims city");
     </script>
 </body>
+
 {% endblock %}
