@@ -15,48 +15,48 @@ class University
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private string $image;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $street;
+    private string $street;
 
     /**
      * @ORM\Column(type="string", length=30)
      */
-    private $city;
+    private string $city;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", lenght=50)
      */
-    private $postalCode;
+    private string $postalCode;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $referentMail;
+    private string $referentMail;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private string $description;
 
     /**
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="universities")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $country;
+    private Country $country;
 
     public function getId(): ?int
     {
@@ -111,12 +111,12 @@ class University
         return $this;
     }
 
-    public function getPostalCode(): ?int
+    public function getPostalCode(): ?string
     {
         return $this->postalCode;
     }
 
-    public function setPostalCode(int $postalCode): self
+    public function setPostalCode(string $postalCode): self
     {
         $this->postalCode = $postalCode;
 
@@ -147,12 +147,12 @@ class University
         return $this;
     }
 
-    public function getCountry(): ?country
+    public function getCountry(): ?Country
     {
         return $this->country;
     }
 
-    public function setCountry(?country $country): self
+    public function setCountry(?Country $country): self
     {
         $this->country = $country;
 
