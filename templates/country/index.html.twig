@@ -13,8 +13,11 @@
 
     <ul>
     {% for country in countries %}
-        <li>{{ country.name }}</li>
+        <li><a href="{{ path("country_show", { id: country.id }) }}"> {{ country.name }}</li>
     {% endfor %}    
     </ul>
+    <a href="{{ path('home') }}">
+        Retour à l'accueil
+    </a>
 </div>
 {% endblock %}

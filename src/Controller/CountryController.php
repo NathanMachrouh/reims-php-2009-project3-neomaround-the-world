@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Country;
 
-
 class CountryController extends AbstractController
 {
     /**
@@ -28,17 +27,8 @@ class CountryController extends AbstractController
 
     public function show(Country $country): Response
     {
-        if (!$country) {
-            throw $this->createNotFoundException(
-                'No program with id : '.$country.' found in program\'s table.'
-            );
-        }
         return $this->render('country/show.html.twig', [
-            'country' => $country, 
+            'country' => $country,
         ]);
-
-
-
-
     }
 }
