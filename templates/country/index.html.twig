@@ -9,12 +9,12 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>All Countries</h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ '/home/wilder/1. Projet 3/reims-php-2009-project3-neomaround-the-world/src/Controller/CountryController.php'|file_link(0) }}">src/Controller/CountryController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/wilder/1. Projet 3/reims-php-2009-project3-neomaround-the-world/templates/country/index.html.twig'|file_link(0) }}">templates/country/index.html.twig</a></code></li>
+    {% for country in countries %}
+        <li>{{ country.name }}</li>
+    {% endfor %}    
     </ul>
 </div>
 {% endblock %}
