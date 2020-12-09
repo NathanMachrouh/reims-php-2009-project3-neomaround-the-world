@@ -6,6 +6,8 @@ use App\Repository\CountryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Country;
+
 
 class CountryController extends AbstractController
 {
@@ -19,5 +21,24 @@ class CountryController extends AbstractController
         return $this->render('country/index.html.twig', [
             'countries' => $countries
         ]);
+    }
+    /**
+     * @Route("/country/{id}", name="country_show")
+     */
+
+    public function show(Country $country): Response
+    {
+        if (!$country) {
+            throw $this->createNotFoundException(
+                'No program with id : '.$country.' found in program\'s table.'
+            );
+        }
+        return $this->render('country/show.html.twig', [
+            'country' => $country, 
+        ]);
+
+
+
+
     }
 }
