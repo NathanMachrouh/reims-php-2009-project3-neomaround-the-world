@@ -53,7 +53,7 @@ class University
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=country::class, inversedBy="universities")
+     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="universities")
      * @ORM\JoinColumn(nullable=false)
      */
     private $country;
