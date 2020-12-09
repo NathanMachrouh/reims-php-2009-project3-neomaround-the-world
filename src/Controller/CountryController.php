@@ -12,7 +12,7 @@ class CountryController extends AbstractController
     /**
      * @Route("/country", name="country")
      */
-    public function index( CountryRepository $countryRepository): Response
+    public function index(CountryRepository $countryRepository): Response
     {
         $countries = $countryRepository->findAll();
 
