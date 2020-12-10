@@ -17,17 +17,17 @@ class Country
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=90)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\OneToMany(targetEntity=University::class, mappedBy="country", orphanRemoval=true)
      */
-    private $universities;
+    private ArrayCollection $universities;
 
     public function __construct()
     {
