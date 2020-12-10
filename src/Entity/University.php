@@ -38,7 +38,7 @@ class University
     private string $city;
 
     /**
-     * @ORM\Column(type="string", lenght=50)
+     * @ORM\Column(type="string", length=50)
      */
     private string $postalCode;
 
