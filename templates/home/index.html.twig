@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <body>
-    <style> #mapid { height: 750px; }</style>
-    <h1>NEOMA'round the world</h1>
-    <a href="{{ path('country') }}">All country</a></br>
-    <a href="{{ path('university') }}">All university</a>
+    <style> #mapid { height: 750px; }
+        #logo{height: 150px;}
+        a{ align-items: center; display: flex; justify-content: space-between;}
+    </style>
+    <img id="logo" src="{{ asset('/build/images/logo.52dc2bfe.png') }}" alt=""><br>
+    <a href="{{ path('country') }}">Country</a></br>
+    <a href="{{ path('university') }}">University</a>
     <div id="mapid"></div>
 
     <script type="text/javascript">
-        var mymap = L.map('mapid').setView([49.25, 4.0333], 13);
+        var mymap = L.map('mapid').setView([49.25, 4.0333], 3);
       
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Imagery © <a href="mapbox:/">Mapbox</a>',
