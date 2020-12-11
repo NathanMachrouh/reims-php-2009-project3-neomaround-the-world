@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <body>
-    <style> #mapid { height: 750px; }
-        #logo{height: 150px;}
-        a{ align-items: center; display: flex; justify-content: space-between;}
-    </style>
     <img id="logo" src="{{ asset('/build/images/logo.52dc2bfe.png') }}" alt=""><br>
-    <a href="{{ path('country') }}">Country</a></br>
-    <a href="{{ path('university') }}">University</a>
+    <hr>
+    <div class="home">
+        <a href="{{ path('country') }}">Country</a></br>
+        <a href="{{ path('university') }}">University</a>
+    </div>
+    
     <div id="mapid"></div>
 
     <script type="text/javascript">
@@ -28,7 +28,7 @@
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 3000
+        radius: 10000
         }).addTo(mymap);
 
         marker.bindPopup("<b>Neoma BS Reims</b><br>Bienvenue!").openPopup();
