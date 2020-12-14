@@ -8,8 +8,8 @@ body {
 
 #mapid { 
     height: 50vh; 
-    //border-radius: 45%;
-    margin-top: 50px;
+    position: relative;
+    top: 40px;
 }
 
 #logo {
@@ -22,12 +22,8 @@ body {
 .home {
     display: grid;
     text-align: center;
-    font-size: 25px;
-}
-
-hr {
-    border: 3px solid rebeccapurple;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5);
+    font-size: 1.5em;
+    border-top: 3px solid rebeccapurple;
 }
 
 ul {

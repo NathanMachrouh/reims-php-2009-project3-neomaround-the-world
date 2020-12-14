@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<body>
     <img id="logo" src="{{ asset('/build/images/logo.52dc2bfe.png') }}" alt=""><br>
-    <hr>
     <div class="home">
         <a href="{{ path('country') }}">Country</a></br>
         <a href="{{ path('university') }}">University</a>
@@ -35,6 +33,6 @@
 
         circle.bindPopup("Welcome to Reims city");
     </script>
-</body>
+
 
 {% endblock %}
