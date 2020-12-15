@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-    <img id="logo" src="{{ asset('/build/images/logo.52dc2bfe.png') }}" alt=""><br>
-    <div class="home">
-        <a href="{{ path('country') }}">Country</a></br>
-        <a href="{{ path('university') }}">University</a>
-    </div>
+    <header class="header">
+        <h1 class="mainTitle">Neoma'round the world</h1>
+    </header>
     
     <div id="mapid"></div>
 
