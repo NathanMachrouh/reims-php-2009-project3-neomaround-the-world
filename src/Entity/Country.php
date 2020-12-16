@@ -27,7 +27,7 @@ class Country
     /**
      * @ORM\OneToMany(targetEntity=University::class, mappedBy="country", orphanRemoval=true)
      */
-    private ArrayCollection $universities;
+    private Collection $universities;
 
     public function __construct()
     {
