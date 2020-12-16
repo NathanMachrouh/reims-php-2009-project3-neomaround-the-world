@@ -6,6 +6,7 @@ use App\Repository\CountryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Cost;
 
 /**
  * @ORM\Entity(repositoryClass=CountryRepository::class)
@@ -30,19 +31,20 @@ class Country
     private Collection $universities;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\OneToOne(targetEntity=Cost::class, mappedBy="country", cascade={"persist", "remove"})
      */
-    private string $Cost;
+    private ?Cost $cost;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\OneToOne(targetEntity=Opinion::class, mappedBy="country", cascade={"persist", "remove"})
      */
-    private string $live;
+    private ?Opinion $opinion;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\OneToOne(targetEntity=Live::class, mappedBy="country", cascade={"persist", "remove"})
      */
-    private string $opinion;
+    private ?Live $live;
+
 
     public function __construct()
     {
@@ -96,38 +98,55 @@ class Country
         return $this;
     }
 
-    public function getCost(): ?string
+    public function getCost(): ?Cost
     {
-        return $this->Cost;
+        return $this->cost;
     }
 
-    public function setCost(string $Cost): self
+    public function setCost(?Cost $cost): self
     {
-        $this->Cost = $Cost;
+        $this->cost = $cost;
+
+        // set (or unset) the owning side of the relation if necessary
+        
+        if ($cost!==null and $cost->getCountry() !== $this) {
+            $cost->setCountry($this);
+        }
 
         return $this;
     }
 
-    public function getLive(): ?string
-    {
-        return $this->live;
-    }
-
-    public function setLive(string $live): self
-    {
-        $this->live = $live;
-
-        return $this;
-    }
-
-    public function getOpinion(): ?string
+    public function getOpinion(): ?Opinion
     {
         return $this->opinion;
     }
 
-    public function setOpinion(string $opinion): self
+    public function setOpinion(?Opinion $opinion): self
     {
         $this->opinion = $opinion;
+
+        // set (or unset) the owning side of the relation if necessary
+        
+        if ($opinion !== null and $opinion->getCountry() !== $this) {
+            $opinion->setCountry($this);
+        }
+
+        return $this;
+    }
+
+    public function getLive(): ?Live
+    {
+        return $this->live;
+    }
+
+    public function setLive(?Live $live): self
+    {
+        $this->live = $live;
+
+        // set (or unset) the owning side of the relation if necessary
+        if ($live !== null and $live->getCountry() !== $this) {
+            $live->setCountry($this);
+        }
 
         return $this;
     }
