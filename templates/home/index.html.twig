@@ -4,34 +4,46 @@
     <header class="header">
         <h1 class="mainTitle">Neoma'round the world</h1>
     </header>
+
+
+    <div class="burger"></div>
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+      <div class="spinner diagonal part-1"></div>
+      <div class="spinner horizontal"></div>
+      <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+      <ul class="sidebarMenuInner">
+        <li><a href="https://vanila.io" target="_blank">Home</a></li>
+        <li><a href="https://instagram.com/plavookac" target="_blank">Country</a></li>
+        <li><a href="https://twitter.com/plavookac" target="_blank">University</a></li>
+        <li><a href="https://neoma-bs.fr/" target="_blank">Neoma BS</a></li>
+      </ul>
+    </div>
     
     <div id="mapid"></div>
 
-    <script type="text/javascript">
-        var mymap = L.map('mapid').setView([49.25, 4.0333], 3);
-      
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Imagery © <a href="mapbox:/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiYWRlbGluZWI1MSIsImEiOiJja2loOWdlcmswNWNnMnptd2Jvb3l6MDA3In0.XbM3nj9P9Gd0daPf7tt4sg'
-        }).addTo(mymap);
-
-        var marker = L.marker([49.23840602490704, 4.003347257434664]).addTo(mymap);
-
+    <script>
+        L.mapbox.accessToken = 'pk.eyJ1IjoiYWRlbGluZWI1MSIsImEiOiJja2loOWdlcmswNWNnMnptd2Jvb3l6MDA3In0.XbM3nj9P9Gd0daPf7tt4sg';
+        var map = L.mapbox.map('mapid')
+            .setView([29.400000, 15.678929], 2.61);
+        
+        L.mapbox.styleLayer('mapbox://styles/adelineb51/ckihb8xxq6djh19pmrtegcu7o').addTo(map);
+        
+        var marker = L.marker([49.23840602490704, 4.003347257434664]).addTo(map);
+        
         var circle = L.circle([49.25, 4.0333], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 10000
-        }).addTo(mymap);
-
-        marker.bindPopup("<b>Neoma BS Reims</b><br>Bienvenue!").openPopup();
-
-        circle.bindPopup("Welcome to Reims city");
-    </script>
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 3000
+                }).addTo(map);
+        
+                marker.bindPopup("<b>NEOMA BS Reims</b><br>Welcome to NEOMA BS!").openPopup();
+        
+                circle.bindPopup("Welcome to Reims city");
+        </script>
 
 
 {% endblock %}
