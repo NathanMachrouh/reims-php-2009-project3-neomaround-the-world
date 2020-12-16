@@ -1,23 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CountryController!{% endblock %}
+{% block title %}University index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>University index</h1>
 
-<div class="example-wrapper">
-    <h1>All Universities</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>PostalCode</th>
+                <th>ReferentMail</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for university in universities %}
+            <tr>
+                <td>{{ university.id }}</td>
+                <td>{{ university.name }}</td>
+                <td>{{ university.image }}</td>
+                <td>{{ university.street }}</td>
+                <td>{{ university.city }}</td>
+                <td>{{ university.postalCode }}</td>
+                <td>{{ university.referentMail }}</td>
+                <td>{{ university.description }}</td>
+                <td>
+                    <a href="{{ path('university_show', {'id': university.id}) }}">show</a>
+                    <a href="{{ path('university_edit', {'id': university.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-    <ul>
-    {% for university in universities %}
-        <li><a href="{{ path("university_show", { id: university.id }) }}"> {{ university.name }}</li>
-    {% endfor %}    
-    </ul>
-    <a href="{{ path('home') }}">
-        Back to map
-    </a>
-</div>
+    <a href="{{ path('university_new') }}">Create new</a>
 {% endblock %}
