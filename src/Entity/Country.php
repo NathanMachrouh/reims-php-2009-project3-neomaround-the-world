@@ -29,6 +29,21 @@ class Country
      */
     private Collection $universities;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private string $Cost;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private string $live;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private string $opinion;
+
     public function __construct()
     {
         $this->universities = new ArrayCollection();
@@ -77,6 +92,42 @@ class Country
                 $university->setCountry(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCost(): ?string
+    {
+        return $this->Cost;
+    }
+
+    public function setCost(string $Cost): self
+    {
+        $this->Cost = $Cost;
+
+        return $this;
+    }
+
+    public function getLive(): ?string
+    {
+        return $this->live;
+    }
+
+    public function setLive(string $live): self
+    {
+        $this->live = $live;
+
+        return $this;
+    }
+
+    public function getOpinion(): ?string
+    {
+        return $this->opinion;
+    }
+
+    public function setOpinion(string $opinion): self
+    {
+        $this->opinion = $opinion;
 
         return $this;
     }
