@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Country;
+use APP\Entity\Cost;
 
 class CountryController extends AbstractController
 {
@@ -26,9 +27,12 @@ class CountryController extends AbstractController
      */
 
     public function show(Country $country): Response
-    {
+    {   
+        $cost=$country->getCost();
+
         return $this->render('country/show.html.twig', [
-            'country' => $country,
+            'country' => $country, 'cost' => $cost,
         ]);
     }
+    
 }
