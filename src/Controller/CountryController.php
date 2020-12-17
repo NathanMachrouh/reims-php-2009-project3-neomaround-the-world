@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Country;
 use APP\Entity\Cost;
+use APP\Entity\Live;
+use APP\Entity\Opinion;
 
 class CountryController extends AbstractController
 {
@@ -27,12 +29,13 @@ class CountryController extends AbstractController
      */
 
     public function show(Country $country): Response
-    {   
-        $cost=$country->getCost();
+    {
+        $cost = $country->getCost();
+        $live = $country->getLive();
+        $opinion = $country->getOpinion();
 
         return $this->render('country/show.html.twig', [
-            'country' => $country, 'cost' => $cost,
+            'country' => $country, 'cost' => $cost, 'live' => $live, 'opinion' => $opinion
         ]);
     }
-    
 }
