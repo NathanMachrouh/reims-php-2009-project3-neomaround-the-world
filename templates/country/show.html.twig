@@ -10,18 +10,23 @@
     </ul>
   </div>
 </div>
-<h1>Costs</h1>
-<p>Average cost in this country for:</p>
-<p>Food is around {{ cost.food }}.</p>
-<p>Transport during your stay will be {{ cost.transport }}.</p>
-<p>Accomodation can be like {{ cost.accomodation }}.</p>
-<p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }}.</p>
-<h1>Live</h1>
-<p>{{ live.culture }}</p>
-<p>{{ live.life }}</p>
-<h1>Opinion</h1>
-<p>{{ opinion.advice }}</p>
-<p><a href="{{ opinion.interview }}" target="_blank">Interview</a></p>
+
+<img class="germany" src="{{ asset('build/images/Germany.jpeg') }}">
+
+  <h1>Costs</h1>
+    <p>Average cost in this country for:</p>
+    <p>Food is around {{ cost.food }}.</p>
+    <p>Transport during your stay will be {{ cost.transport }}.</p>
+    <p>Accomodation can be like {{ cost.accomodation }}.</p>
+    <p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }}.</p>
+
+  <h1>Live</h1>
+    <p>{{ live.culture }}</p>
+    <p>{{ live.life }}</p>
+
+  <h1>Opinion</h1>
+    <p>{{ opinion.advice }}</p>
+    <p><a href="{{ opinion.interview }}" target="_blank">Interview</a></p>
 
 <a href="{{ path('country') }}">
     Back to country list
