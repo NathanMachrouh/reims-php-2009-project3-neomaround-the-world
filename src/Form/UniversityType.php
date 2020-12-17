@@ -19,7 +19,7 @@ class UniversityType extends AbstractType
             ->add('postalCode')
             ->add('referentMail')
             ->add('description')
-            ->add('country')
+            ->add('country', null, ['choice_label' => 'name'])
         ;
     }
 
