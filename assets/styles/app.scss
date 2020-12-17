@@ -2,7 +2,7 @@
 
 body {
     background-color: $ground-color;
-    color: $map-color;
+    color:$map-color;
     margin: 0;
 }
 .header {
@@ -42,7 +42,17 @@ body {
 
 
 // début menu burger
-ul {
+#country:link {
+    text-decoration: none;
+    color: white;
+
+}
+#country:visited {
+    text-decoration: none;
+    color:white;
+}
+
+ul{
     margin: 0;
     padding: 0;
     list-style: none;
@@ -55,6 +65,10 @@ li{
     border: 1px solid rebeccapurple;
     text-align: center;
     box-sizing: border-box;
+    border-radius: 5px;
+    background-color:#4D267F;
+    color: white;
+    box-shadow:10px 5px 5px grey;
 }
 
 .burger {
