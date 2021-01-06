@@ -108,8 +108,7 @@ class Country
         $this->cost = $cost;
 
         // set (or unset) the owning side of the relation if necessary
-        
-        if ($cost!==null and $cost->getCountry() !== $this) {
+        if ($cost !== null and $cost->getCountry() !== $this) {
             $cost->setCountry($this);
         }
 
@@ -126,7 +125,6 @@ class Country
         $this->opinion = $opinion;
 
         // set (or unset) the owning side of the relation if necessary
-        
         if ($opinion !== null and $opinion->getCountry() !== $this) {
             $opinion->setCountry($this);
         }

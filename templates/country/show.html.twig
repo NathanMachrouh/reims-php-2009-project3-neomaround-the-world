@@ -2,6 +2,12 @@
 {% block title %}Country{{ country.id }}{% endblock %}
 
 {% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 900px; width: 90%; font: 18px/1.5 sans-serif;  }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .example-wrapper h1 { display:flex; justify-content: center; border: solid 2px;border-radius:5px; box-shadow:10px 5px 5px grey;}
+
+</style>
 
 <div class="media">
   <div class="media-body">
@@ -12,7 +18,7 @@
 </div>
 
 <img class="germany" src="{{ asset('build/images/Germany.jpeg') }}">
-
+<div class="example-wrapper">
   <h1>Costs</h1>
     <p>Average cost in this country for:</p>
     <p>Food is around {{ cost.food }}.</p>
@@ -27,7 +33,7 @@
   <h1>Opinion</h1>
     <p>{{ opinion.advice }}</p>
     <p><a href="{{ opinion.interview }}" target="_blank">Interview</a></p>
-
+<div>
 <a href="{{ path('country') }}">
     Back to country list
 </a>
