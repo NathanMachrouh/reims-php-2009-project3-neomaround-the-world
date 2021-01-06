@@ -48,12 +48,12 @@ class Country
     /**
      * @ORM\Column(type="float")
      */
-    private $latitude;
+    private float $latitude;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $longitude;
+    private float $longitude;
 
 
     public function __construct()

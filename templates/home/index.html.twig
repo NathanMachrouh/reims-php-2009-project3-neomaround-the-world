@@ -38,7 +38,7 @@
         L.mapbox.styleLayer('mapbox://styles/adelineb51/ckihb8xxq6djh19pmrtegcu7o').addTo(map);
         
         {% for country in countries %}
-            const country{{ country.id }} = L.marker([50.412502, 9.792565])
+            const country{{ country.id }} = L.marker([ {{country.latitude}},{{country.longitude}}])
                 .bindPopup("<b><a href=country/{{ country.id }}/>{{ country.name }}</a></b>")
                 .addTo(map);
         {% endfor %}
