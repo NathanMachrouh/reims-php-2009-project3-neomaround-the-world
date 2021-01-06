@@ -36,53 +36,11 @@
         
         L.mapbox.styleLayer('mapbox://styles/adelineb51/ckihb8xxq6djh19pmrtegcu7o').addTo(map);
         
-        var france = L.marker([46.201389, 2.601975])
-            .bindPopup("<b>France</b><br>Welcome to <b><a href=https://neoma-bs.fr/>Neoma BS!</a></b>")
-            .addTo(map);
-      
-        var germany = L.marker([50.412502, 9.792565])
-            .bindPopup("<b><a href=country/9/>Germany</a></b>")
-            .addTo(map);
-
-        var argentina = L.marker([-33.413548, -65.143882])
-            .bindPopup("<b><a href=country/10/>Argentina</a></b>")
-            .addTo(map);
-        
-        var australia = L.marker([-26.599910, 134.835321])
-            .bindPopup("<b><a href=country/11/>Australia</a></b>")
-            .addTo(map);
-
-        var austria = L.marker([47.842647, 14.646073])
-            .bindPopup("<b><a href=country/12/>Austria</a></b>")
-            .addTo(map);
-
-        var belgium = L.marker([50.685699, 4.806314])
-            .bindPopup("<b><a href=country/13/>Belgium</a></b>")
-            .addTo(map);
-
-        var brazil = L.marker([-10.132490, -51.612836])
-            .bindPopup("<b><a href=country/14/>Brazil</a></b>")
-            .addTo(map);
-
-        var canada = L.marker([56.246490, -101.112170])
-            .bindPopup("<b><a href=country/15/>Canada</a></b>")
-            .addTo(map);
-
-        var chili = L.marker([-25.916893, -69.681057])
-            .bindPopup("<b><a href=country/16/>Chili</a></b>")
-            .addTo(map);
-
-        var china = L.marker([32.990444, 106.884290])
-            .bindPopup("<b><a href=country/17/>China</a></b>")
-            .addTo(map);
-            
-        var columbia = L.marker([2.538309, -73.032689])
-            .bindPopup("<b><a href=country/18/>Columbia</a></b>")
-            .addTo(map);
-
-        var czech = L.marker([49.512893, 15.606441])
-            .bindPopup("<b><a href=country/19/>Czech Republic</a></b>")
-            .addTo(map);
+        {% for country in countries %}
+            const country{{ country.id }} = L.marker([50.412502, 9.792565])
+                .bindPopup("<b><a href=country/{{ country.id }}/>{{ country.name }}</a></b>")
+                .addTo(map);
+        {% endfor %}
 
         var circle = L.circle([49.25, 4.0333], {
                 color: 'red',
