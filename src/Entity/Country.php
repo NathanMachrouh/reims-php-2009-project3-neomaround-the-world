@@ -45,6 +45,16 @@ class Country
      */
     private ?Live $live;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $latitude;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $longitude;
+
 
     public function __construct()
     {
@@ -145,6 +155,30 @@ class Country
         if ($live !== null and $live->getCountry() !== $this) {
             $live->setCountry($this);
         }
+
+        return $this;
+    }
+
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(float $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(float $longitude): self
+    {
+        $this->longitude = $longitude;
 
         return $this;
     }
