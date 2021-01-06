@@ -18,6 +18,12 @@
         <li><a href="{{ path('home') }}">Home</a></li>
         <li><a href="{{ path('country') }}">Country</a></li>
         <li><a href="https://neoma-bs.fr/" target="_blank">Neoma BS</a></li>
+        <li>{% if app.user %}
+                 {{ app.user.email }}
+                 <a href="{{ path('app_logout') }}"> Logout</a>
+            {% else %}
+                <a href="{{ path('app_login') }}"> Login</a>
+            {% endif %}</li>
       </ul>
     </div>
     
