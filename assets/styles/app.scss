@@ -19,7 +19,13 @@ body {
     background-repeat: no-repeat;
     padding-left: 100%;
 }
+.avatar{
+    position: absolute;
+    width: 6%;
+    bottom: 95%;
+    left: 90%;
 
+}
 #mapid { 
     min-height: 60vh; 
     z-index: 2;
@@ -70,7 +76,6 @@ li{
     color: white;
     box-shadow:10px 5px 5px grey;
 }
-
 .burger {
     display: block;
     margin: 0 auto;
@@ -210,4 +215,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .germany{
     position: relative;
     left:8%;
+}
+.login{
+    text-align: center;
 }
