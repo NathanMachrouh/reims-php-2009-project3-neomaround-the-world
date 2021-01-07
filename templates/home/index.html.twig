@@ -16,7 +16,6 @@
     <div id="sidebarMenu">
       <ul class="sidebarMenuInner">
         <li><a href="{{ path('home') }}">Home</a></li>
-        <li><a href="{{ path('country') }}">Country</a></li>
         <li><a href="https://neoma-bs.fr/" target="_blank">Neoma BS</a></li>
         <li>{% if app.user %}
                  {{ app.user.email }}
@@ -26,7 +25,7 @@
             {% endif %}</li>
       </ul>
     </div>
-    <button class="login"><a href ="{{path('app_login')}}"><img class="avatar" src="/build/images/login.1cdcfe7a.png"</a></button>
+    <button class="login"><a href ="{{path('app_login')}}"><img class="avatar" src="/build/images/login.1cdcfe7a.png"></a></button>
 
     <div id="mapid"></div>
 
@@ -42,17 +41,6 @@
                 .bindPopup("<b><a href=country/{{ country.id }}/>{{ country.name }}</a></b>")
                 .addTo(map);
         {% endfor %}
-
-        var circle = L.circle([49.25, 4.0333], {
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: 3000
-                }).addTo(map);
-        
-                
-        
-                circle.bindPopup("Welcome to Reims city");
         </script>
 
 
