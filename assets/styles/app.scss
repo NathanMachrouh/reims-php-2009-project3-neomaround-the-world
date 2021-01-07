@@ -29,8 +29,28 @@ body {
 #mapid { 
     min-height: 60vh; 
     z-index: 2;
-    margin-top: -45%;
+    margin-top: -60%;
 }
+
+// Début Formulaire Login
+form>h1{
+    margin-top: 30%;
+    margin-bottom: 5%;
+}
+label{
+    display: grid;
+    text-align: center;
+    margin-bottom: 3%;
+}
+form>input{
+    display: grid;
+    margin: auto;
+    margin-bottom: 5%;
+}
+form>button{
+    margin-left: 39%;
+}
+// Fin Formulaire Login
 
 .slogan{
     color: #4D267F;
