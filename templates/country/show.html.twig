@@ -32,10 +32,8 @@
 
   <h1>Opinion</h1>
     <p>{{ opinion.advice }}</p>
-    <p><a href="{{ opinion.interview }}" target="_blank">Interview</a></p>
-<div>
-<a href="{{ path('country') }}">
-    Back to country list
-</a>
 
+  <button class="button"><a href="{{ opinion.interview }}" target="_blank">Interview</a></button>
+  <button class="button"><a href="{{ path('home') }}">Back home</a></button>
+    
 {% endblock %}
