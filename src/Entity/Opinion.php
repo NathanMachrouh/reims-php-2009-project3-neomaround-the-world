@@ -28,14 +28,9 @@ class Opinion
     private string $advice;
 
     /**
-     * @ORM\OneToOne(targetEntity=Country::class, inversedBy="opinion", cascade={"persist", "remove"})
-     */
-    private ?Country $country;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class)
      */
-    private $userId;
+    private $user;
 
     public function getId(): ?int
     {
@@ -66,26 +61,14 @@ class Opinion
         return $this;
     }
 
-    public function getCountry(): ?Country
+    public function getUser(): ?User
     {
-        return $this->country;
+        return $this->user;
     }
 
-    public function setCountry(?Country $country): self
+    public function setUser(?User $user): self
     {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    public function getUserId(): ?User
-    {
-        return $this->userId;
-    }
-
-    public function setUserId(?User $userId): self
-    {
-        $this->userId = $userId;
+        $this->user = $user;
 
         return $this;
     }
