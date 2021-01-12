@@ -19,7 +19,7 @@ final class Version20210106143429 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
-        $this->addSql('UPDATE country SET latitude="51.0834196", longitude="10.4234469" WHERE id=9');
+        $this->addSql('UPDATE country SET latitude="51.0834196", longitude="10.4234469" WHERE id=1');
        
         /*("-34.9964963","-64.9672817",10),
         ("-24.7761086","134.755",11),

@@ -31,8 +31,11 @@
     <p>{{ live.life }}</p>
 
   <h1>Opinion</h1>
-    <p>{{ opinion.advice }}</p>
-    <p><a href="{{ opinion.interview }}" target="_blank">Interview</a></p>
+  {% for comment in comments %}
+    <p>{{ comment.advice }}</p>
+    <p><a href="{{ comment.interview }}" target="_blank">Interview</a></p>
+  {% endfor %}  
+    <div>{% include "opinion/_form.html.twig" %}</div> 
 <div>
 <a href="{{ path('country') }}">
     Back to country list

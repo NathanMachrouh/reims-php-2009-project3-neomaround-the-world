@@ -21,7 +21,7 @@ class UserFixtures extends Fixture
     {
         // $product = new Product();
         // $manager->persist($product);
-        $contributor = new User();
+        /*$contributor = new User();
         $contributor->setEmail('massinta.aitbraham@gmail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
         $contributor->setPassword($this->passwordEncoder->encodePassword(
@@ -40,8 +40,16 @@ class UserFixtures extends Fixture
             'password'
         ));
 
-        $manager->persist($admin);
+        $manager->persist($admin);*/
 
+        $user = new User();
+        $user->setEmail('user@neoma-bs.com');
+        $user->setRoles(['ROLE_USER']);
+        $user->setPassword($this->passwordEncoder->encodePassword(
+            $user,
+            'password'
+        ));
+        $manager->persist($user);
         $manager->flush();
     }
 }
