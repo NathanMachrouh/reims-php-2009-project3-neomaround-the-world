@@ -36,11 +36,6 @@ class Country
     private ?Cost $cost;
 
     /**
-     * @ORM\OneToOne(targetEntity=Opinion::class, mappedBy="country", cascade={"persist", "remove"})
-     */
-    private ?Opinion $opinion;
-
-    /**
      * @ORM\OneToOne(targetEntity=Live::class, mappedBy="country", cascade={"persist", "remove"})
      */
     private ?Live $live;
@@ -125,23 +120,6 @@ class Country
         // set (or unset) the owning side of the relation if necessary
         if ($cost !== null and $cost->getCountry() !== $this) {
             $cost->setCountry($this);
-        }
-
-        return $this;
-    }
-
-    public function getOpinion(): ?Opinion
-    {
-        return $this->opinion;
-    }
-
-    public function setOpinion(?Opinion $opinion): self
-    {
-        $this->opinion = $opinion;
-
-        // set (or unset) the owning side of the relation if necessary
-        if ($opinion !== null and $opinion->getCountry() !== $this) {
-            $opinion->setCountry($this);
         }
 
         return $this;
