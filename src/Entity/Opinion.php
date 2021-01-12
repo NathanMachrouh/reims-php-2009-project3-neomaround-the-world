@@ -32,6 +32,11 @@ class Opinion
      */
     private ?Country $country;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class)
+     */
+    private $user_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Opinion
     public function setCountry(?Country $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?User $user_id): self
+    {
+        $this->user_id = $user_id;
 
         return $this;
     }
