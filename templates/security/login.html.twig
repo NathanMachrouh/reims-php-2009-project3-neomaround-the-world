@@ -4,7 +4,6 @@
 
 {% block body %}
 
-<h1 class="mainTitle">Neoma'round the world</h1>
 <form method="post">
 
     {% if error %}
@@ -41,4 +40,5 @@
         Sign in
     </button>
 </form>
+<a href="{{path ('app_register')}}"><p class="registration"><strong>For registration, click here</strong></p></a>
 {% endblock %}
