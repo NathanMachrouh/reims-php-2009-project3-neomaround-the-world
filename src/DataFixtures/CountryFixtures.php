@@ -6,11 +6,12 @@ use App\Entity\Country;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class CountryFixtures extends Fixture
+
+class CountryFixtures extends Fixture 
 {
     public function load(ObjectManager $manager)
     {
-        $allCountryData = [
+        $allCountryData =  [
             ['name' => 'Argentina', 'latitude' => '-38.4212955', 'longitude' => '-63.587402499999996', 'image' => 'https://cdn.pixabay.com/photo/2013/01/11/01/22/landscape-74572_960_720.jpg'],
             ['name' => 'Australia' , 'latitude' => '-26.853387500000004', 'longitude' => '133.27515449999999', 'image' => 'https://cdn.pixabay.com/photo/2018/05/07/22/08/sydney-opera-house-3381786_960_720.jpg'],
             ['name' => 'Austria',  'latitude' => '47.6975425', 'longitude' => '13.34931899999998', 'image' => 'https://cdn.pixabay.com/photo/2018/08/16/08/39/hallstatt-3609863_960_720.jpg'],
@@ -52,14 +53,16 @@ class CountryFixtures extends Fixture
             ['name' => 'USA', 'latitude' => '36.966428', 'longitude' => '-95.844032', 'image' => 'https://cdn.pixabay.com/photo/2016/01/19/17/51/suspension-bridge-1149942_960_720.jpg'],
             ['name' => 'Vietnam', 'latitude' => '15.9742225', 'longitude' => '105.80643099999998', 'image' => 'https://cdn.pixabay.com/photo/2017/10/12/03/03/view-2843338_1280.jpg']
         ];
-
-        foreach ($allCountryData as $countryData) {
+        $i=1;
+        foreach ($allCountryData as $countryData ) {
             $country = new Country();
             $country->setName($countryData['name']);
             $country->setLatitude($countryData['latitude']);
             $country->setLongitude($countryData['longitude']);
             $country->setImage($countryData['image']);
+            
             $manager->persist($country);
+            $this->addReference('country_' . $i++, $country);
         }
 
         $manager->flush();
