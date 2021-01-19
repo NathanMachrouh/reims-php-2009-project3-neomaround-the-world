@@ -56,9 +56,9 @@ class Country
     private ?string $image;
 
     /**
-     * @ORM\OneToMany(targetEntity=Opinion::class, mappedBy="country")
+     * @ORM\OneToOne(targetEntity=Opinion::class, mappedBy="country")
      */
-    private collection $opinions;
+    private ?Opinion $opinions;
 
 
     public function __construct()
@@ -184,15 +184,12 @@ class Country
         return $this;
     }
 
-    /**
-     * @return Collection|Opinion[]
-     */
-    public function getOpinions(): Collection
+    public function getOpinions(): ?Opinion
     {
         return $this->opinions;
     }
 
-    public function addOpinion(Opinion $opinion): self
+    /*public function addOpinion(Opinion $opinion): self
     {
         if (!$this->opinions->contains($opinion)) {
             $this->opinions[] = $opinion;
@@ -212,5 +209,5 @@ class Country
         }
 
         return $this;
-    }
+    }*/
 }
