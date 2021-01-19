@@ -52,14 +52,16 @@ class CountryFixtures extends Fixture
             ['name' => 'USA', 'latitude' => '36.966428', 'longitude' => '-95.844032', 'image' => 'https://cdn.pixabay.com/photo/2016/01/19/17/51/suspension-bridge-1149942_960_720.jpg'],
             ['name' => 'Vietnam', 'latitude' => '15.9742225', 'longitude' => '105.80643099999998', 'image' => 'https://cdn.pixabay.com/photo/2017/10/12/03/03/view-2843338_1280.jpg']
         ];
-
+        $i = 1;
         foreach ($allCountryData as $countryData) {
             $country = new Country();
             $country->setName($countryData['name']);
             $country->setLatitude($countryData['latitude']);
             $country->setLongitude($countryData['longitude']);
             $country->setImage($countryData['image']);
+
             $manager->persist($country);
+            $this->addReference('country_' . $i++, $country);
         }
 
         $manager->flush();
