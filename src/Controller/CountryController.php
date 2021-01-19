@@ -32,10 +32,9 @@ class CountryController extends AbstractController
     {
         $cost = $country->getCost();
         $live = $country->getLive();
-        $opinion = $country->getOpinion();
 
         return $this->render('country/show.html.twig', [
-            'country' => $country, 'cost' => $cost, 'live' => $live, 'opinion' => $opinion
+            'country' => $country, 'cost' => $cost, 'live' => $live,
         ]);
     }
 }

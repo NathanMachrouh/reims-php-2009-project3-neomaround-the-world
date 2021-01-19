@@ -17,23 +17,20 @@
   </div>
 </div>
 
-<img class="germany" src="{{ asset('build/images/Germany.jpeg') }}">
+<img class="germany" src="{{ country.image }}">
 <div class="example-wrapper">
   <h1>Costs</h1>
     <p>Average cost in this country for:</p>
-    <p>Food is around {{ cost.food }}.</p>
-    <p>Transport during your stay will be {{ cost.transport }}.</p>
-    <p>Accomodation can be like {{ cost.accomodation }}.</p>
-    <p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }}.</p>
+    <p>Food is around {{ cost.food }} €.</p>
+    <p>Transport during your stay will be {{ cost.transport }} €.</p>
+    <p>Accomodation can be like {{ cost.accomodation }} €.</p>
+    <p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }} €.</p>
 
   <h1>Live</h1>
     <p>{{ live.culture }}</p>
     <p>{{ live.life }}</p>
 
-  <h1>Opinion</h1>
-    <p>{{ opinion.advice }}</p>
-
-  <button class="button"><a href="{{ opinion.interview }}" target="_blank">Interview</a></button>
+  
   <button class="button"><a href="{{ path('home') }}">Back home</a></button>
     
 {% endblock %}
