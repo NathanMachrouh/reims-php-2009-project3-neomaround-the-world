@@ -64,7 +64,6 @@ class Country
     public function __construct()
     {
         $this->universities = new ArrayCollection();
-        $this->opinions = new ArrayCollection();
     }
 
     public function getId(): ?int
