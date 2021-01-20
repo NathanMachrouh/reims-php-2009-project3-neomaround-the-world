@@ -1,10 +1,16 @@
 @import 'variables.scss';
+@font-face {
+    font-family: "Minion Pro";
+    src: url("../fonts/Minion\ Pro\ Regular.ttf") format("truetype")
+}
 
 body {
     background-color: $ground-color;
     color:$map-color;
     margin: 0;
-    font-family: 'Minion Pro', sans-serif;
+    font-family: "Minion Pro";
+    font-size: 1.2rem;
+    text-align: center;
 }
 .header {
     padding: 1rem;
@@ -152,7 +158,7 @@ li{
     width: 100%;
     transform: translateX(-100%);
     transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, #4D267F 0%, #984CFC 100%);
+    background: linear-gradient(180deg, #a79f98 0%, #a79f98 100%);
 }
 .sidebarMenuInner{
     margin:0;
@@ -272,21 +278,19 @@ a {
 .bottombar {
     display: flex;
     justify-content: center;
-    background-color: #4d267f;  
+    background-color: #a79f98;  
     position: fixed;
     bottom: 0;
     width: 100%;
 }
-  
-.iconbar a {
-    display: inline-block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
 
+
+.iconbar img{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1rem;
+}
 // Début live_show
 
 .live{

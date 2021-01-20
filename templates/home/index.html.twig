@@ -40,6 +40,14 @@
                 .bindPopup("<b><a href=country/{{ country.id }}/>{{ country.name }}</a></b>")
                 .addTo(map);
         {% endfor %}
+        {% for university in universities %}
+            const university{{ university.id }} = L.circle([ {{university.latitude}},{{university.longitude}}],10000, 
+                                                  { color:'red',
+                                                    fillColor: '#f03',
+                                                    fillOpacity: 0.5 })
+                .bindPopup("<b><a href=university/{{ university.id}}/>{{ university.name }}</a></b>")
+                .addTo(map);
+        {% endfor %}
         </script>
 
 

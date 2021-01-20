@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Opinion;
-use App\Entity\Country;
 use App\Form\OpinionType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,11 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class OpinionController extends AbstractController
 {
     /**
-     * @Route("/new", name="app_new")
+     * @Route("/new", name="opinion_new")
      */
     public function new(
         Request $request
-    ): ?Response {
+    ): Response {
         $opinion = new Opinion();
         $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);

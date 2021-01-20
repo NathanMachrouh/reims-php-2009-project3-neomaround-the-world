@@ -15,30 +15,12 @@ class OpinionType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $opinion = new opinion();
-
         $builder
-            
-            ->add('firstname')
-            ->add('name')
-            ->add('course')
-            ->add('opinion', OpinionType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please type your opinion',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'maxMessage' => 'Your text should not exceed {{ limit }} characters',
-                        'max' => 4096,
-                    ]),
-                ],
-            ])
+            ->add('country', null, ['choice_label' => 'name'])
+            ->add('advice')
+            ->add('interview')
         ;
     }
-    
-            
 
     public function configureOptions(OptionsResolver $resolver): void
     {
