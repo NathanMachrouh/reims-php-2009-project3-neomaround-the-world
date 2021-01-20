@@ -71,7 +71,7 @@ class CountryController extends AbstractController
 
     public function showOpinions(Country $country): Response
     {
-        $opinions = $country->getLive();
+        $opinions = $country->getOpinions();
 
         return $this->render('opinions/show.html.twig', [
             'opinions' => $opinions,

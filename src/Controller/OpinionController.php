@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use APP\Entity\Opinion;
+use APP\Entity\Country;
 use App\Form\OpinionType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,15 +34,3 @@ class OpinionController extends AbstractController
         ]);
     }
 }
-
-//   /**
-//     * @Route("/opinion/{id}", name="opinion_show")
-//     */
-//    public function show(Opinion $opinion): Response
-//    {
-//        $opinion->getOpinion();
-//
-//        return $this->render('opinions/show.html.twig', [
-//            'opinion' => $opinion
-//        ]);
-//    }
