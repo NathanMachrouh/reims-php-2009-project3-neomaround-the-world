@@ -3,9 +3,6 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 900px; width: 90%; font: 18px/1.5 sans-serif;  }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    .example-wrapper h1 { display:flex; justify-content: center; border: solid 2px;border-radius:5px; box-shadow:10px 5px 5px grey;}
 
 </style>
 
@@ -25,9 +22,13 @@
     <p>Transport during your stay will be {{ cost.transport }} €.</p>
     <p>Accomodation can be like {{ cost.accomodation }} €.</p>
     <p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }} €.</p> #}
-<a href="{{ path("cost_show", { id: country.id }) }}">Cost </a>
-<a href="{{ path("live_show", { id: country.id }) }}">Live </a>
-<a href="{{ path("opinions_show", { id: country.id }) }}">Opinions </a>
+	<nav class="bottombar">
+  <div class="iconbar">
+		<a href="{{ path("cost_show", { id: country.id }) }}">Cost </a>
+		<a href="{{ path("live_show", { id: country.id }) }}">Live </a>
+		<a href="{{ path("opinions_show", { id: country.id }) }}">Opinions </a>
+  </div>
+	</nav>
 
   {# <h1>Live</h1>
     <p>{{ live.culture }}</p>
@@ -38,6 +39,6 @@
     <p>{{ opinion.advice }}</p>
     <p>{{ opinion.interview }}</p> #}
   
-  <button class="button"><a href="{{ path('home') }}">Back home</a></button>
+  {# <button class="button"><a href="{{ path('home') }}">Back home</a></button> #}
     
 {% endblock %}
