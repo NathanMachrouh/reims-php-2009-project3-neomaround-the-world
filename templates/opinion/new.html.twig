@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}New Opinion{% endblock %}
+
+{% block body %}
+    <h1>Share your experience !</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type='submit' value='Add my opinion'>
+    {{ form_end(form) }}
+
+{% endblock %}
