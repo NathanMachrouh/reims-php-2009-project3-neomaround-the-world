@@ -77,6 +77,4 @@ class CountryController extends AbstractController
             'opinions' => $opinions,
         ]);
     }
-
-
 }
