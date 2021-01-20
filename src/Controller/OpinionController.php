@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use APP\Entity\Opinion;
-use APP\Entity\Country;
+use App\Entity\Opinion;
+use App\Entity\Country;
 use App\Form\OpinionType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +17,7 @@ class OpinionController extends AbstractController
      */
     public function new(
         Request $request
-    ) : ?Response {
+    ): ?Response {
         $opinion = new Opinion();
         $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);
