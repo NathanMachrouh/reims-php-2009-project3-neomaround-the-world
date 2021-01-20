@@ -38,4 +38,43 @@ class CountryController extends AbstractController
             'country' => $country, 'cost' => $cost, 'live' => $live, 'opinion' => $opinion
         ]);
     }
+
+    /**
+     * @Route("/country/{id}/cost", name="cost_show")
+     */
+
+    public function showCost(Country $country): Response
+    {
+        $cost = $country->getCost();
+
+        return $this->render('cost/show.html.twig', [
+            'cost' => $cost,
+        ]);
+    }
+
+    /**
+     * @Route("/country/{id}/live", name="live_show")
+     */
+
+    public function showLive(Country $country): Response
+    {
+        $live = $country->getLive();
+
+        return $this->render('live/show.html.twig', [
+            'live' => $live,
+        ]);
+    }
+
+    /**
+     * @Route("/country/{id}/opinions", name="opinions_show")
+     */
+
+    public function showOpinions(Country $country): Response
+    {
+        $opinions = $country->getLive();
+
+        return $this->render('opinions/show.html.twig', [
+            'opinions' => $opinions,
+        ]);
+    }
 }
