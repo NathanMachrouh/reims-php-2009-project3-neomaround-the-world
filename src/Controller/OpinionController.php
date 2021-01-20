@@ -12,23 +12,25 @@ use Symfony\Component\Routing\Annotation\Route;
 class OpinionController extends AbstractController
 {
     /**
-     * The controller for the opinion add form
-     *
-     * @Route("/new", name="new")
+     * @Route("/new", name="app_new")
      */
-    public function new(Request $request) : ?Response
-    {
+    public function new(
+        Request $request
+    ) : ?Response {
         $opinion = new Opinion();
         $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) {
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($opinion);
             $entityManager->flush();
 
-            return $this->redirectToRoute('country_index');
+            return $this->redirectToRoute('opinion_index');
         }
-        return $this->render('opinion/new.html.twig', ["form" => $form->createView()]);
+        return $this->render('opinion/new.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }
 
