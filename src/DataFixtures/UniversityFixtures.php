@@ -19,7 +19,7 @@ class UniversityFixtures extends Fixture
             ['name' => 'Fundaçao Getulio Vargas', 'latitude' => '-23.5599049', 'longitude' => '-46.6534588'],
             ['name' => 'Nipissing University, North Bay, Ontario', 'latitude' => '46.3432694', 'longitude' => '-79.4916705'],
         ];
-        
+
         $faker = Faker\Factory::create('en_US');
         $i = 1;
         foreach ($allUniversityData as $universityData) {
@@ -32,7 +32,6 @@ class UniversityFixtures extends Fixture
             $university->setCountry($this->getReference('country_' . $i++));
 
             $manager->persist($university);
-
         }
         $manager->flush();
     }
