@@ -28,26 +28,6 @@ class University
     private string $image;
 
     /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private string $street;
-
-    /**
-     * @ORM\Column(type="string", length=30)
-     */
-    private string $city;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private string $postalCode;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private string $referentMail;
-
-    /**
      * @ORM\Column(type="text")
      */
     private string $description;
@@ -56,7 +36,17 @@ class University
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="universities")
      * @ORM\JoinColumn(nullable=false)
      */
-    private Country $country;
+    private ?Country $country;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private float $longitude;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private float $latitude;
 
     public function getId(): ?int
     {
@@ -87,54 +77,6 @@ class University
         return $this;
     }
 
-    public function getStreet(): ?string
-    {
-        return $this->street;
-    }
-
-    public function setStreet(string $street): self
-    {
-        $this->street = $street;
-
-        return $this;
-    }
-
-    public function getCity(): ?string
-    {
-        return $this->city;
-    }
-
-    public function setCity(string $city): self
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    public function getPostalCode(): ?string
-    {
-        return $this->postalCode;
-    }
-
-    public function setPostalCode(string $postalCode): self
-    {
-        $this->postalCode = $postalCode;
-
-        return $this;
-    }
-
-    public function getReferentMail(): ?string
-    {
-        return $this->referentMail;
-    }
-
-    public function setReferentMail(string $referentMail): self
-    {
-        $this->referentMail = $referentMail;
-
-        return $this;
-    }
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -155,6 +97,30 @@ class University
     public function setCountry(?Country $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(float $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(float $latitude): self
+    {
+        $this->latitude = $latitude;
 
         return $this;
     }
