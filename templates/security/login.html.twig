@@ -3,7 +3,9 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-
+<div class="login-slogan">
+    <p>Log in with your FIRST ID to access your application</p>
+</div>
 <form method="post">
 
     {% if error %}
@@ -16,10 +18,8 @@
         </div>
     {% endif %}
     <h1 class="login">Log in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus placeholder="Your Email">
+    <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="Your Password">
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
