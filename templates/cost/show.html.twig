@@ -4,10 +4,18 @@
 {% block body %}
 <div class="cost">
 <h1>Costs</h1>
-    <p>Average cost in this country for:</p>
+    <p>The average cost in this country during a trip for :</p>
+    <h2>Food</h2>
+    <img class="template_image" type="image/png" src="{{ asset('build/images/cost_food.png') }}" />
     <p>Food is around {{ cost.food }} €.</p>
+    <h2>Transport</h2>
+    <img class="template_image" type="image/png" src="{{ asset('build/images/cost_transport.png') }}" />
     <p>Transport during your stay will be {{ cost.transport }} €.</p>
+    <h2>Accomodation</h2>
+    <img class="template_image" type="image/png" src="{{ asset('build/images/cost_accomodation.png') }}" />
     <p>Accomodation can be like {{ cost.accomodation }} €.</p>
+    <h2>Extras</h2>
+    <img class="template_image" type="image/png" src="{{ asset('build/images/cost_extras.png') }}" />
     <p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }} €.</p>
 </div>    
 {% endblock %}
