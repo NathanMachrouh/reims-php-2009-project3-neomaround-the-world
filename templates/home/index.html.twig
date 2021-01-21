@@ -37,7 +37,7 @@
         
         {% for country in countries %}
             const country{{ country.id }} = L.marker([ {{country.latitude}},{{country.longitude}}])
-                .bindPopup("<b><a href=country/{{ country.id }}/>{{ country.name }}</a></b>")
+                .bindPopup("<b><a href=country/{{ country.id }}/><img class=image_popup src={{ country.image }}></a></b>")
                 .addTo(map);
         {% endfor %}
         {% for university in universities %}
@@ -49,6 +49,4 @@
                 .addTo(map);
         {% endfor %}
         </script>
-
-
 {% endblock %}
