@@ -16,7 +16,7 @@ class OpinionController extends AbstractController
      */
     public function new(
         Request $request
-    ) : Response {
+    ): Response {
         $opinion = new Opinion();
         $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);
@@ -33,15 +33,3 @@ class OpinionController extends AbstractController
         ]);
     }
 }
-
-//   /**
-//     * @Route("/opinion/{id}", name="opinion_show")
-//     */
-//    public function show(Opinion $opinion): Response
-//    {
-//        $opinion->getOpinion();
-//
-//        return $this->render('opinions/show.html.twig', [
-//            'opinion' => $opinion
-//        ]);
-//    }

@@ -21,15 +21,15 @@ class UniversityFixtures extends Fixture
         ];
 
         $faker = Faker\Factory::create('en_US');
-        $i = 1;
+        $index = 1;
         foreach ($allUniversityData as $universityData) {
             $university = new University();
             $university->setName($universityData['name']);
             $university->setLatitude($universityData['latitude']);
             $university->setLongitude($universityData['longitude']);
-            $university->setImage($faker->imageUrl($width = 640, $height = 480));
+            $university->setImage($faker->imageUrl());
             $university->setDescription($faker->address);
-            $university->setCountry($this->getReference('country_' . $i++));
+            $university->setCountry($this->getReference('country_' . $index++));
 
             $manager->persist($university);
         }
