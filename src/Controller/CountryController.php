@@ -73,7 +73,7 @@ class CountryController extends AbstractController
     {
         $opinions = $country->getOpinions();
 
-        return $this->render('opinions/show.html.twig', [
+        return $this->render('opinion/show.html.twig', [
             'opinions' => $opinions,
         ]);
     }
