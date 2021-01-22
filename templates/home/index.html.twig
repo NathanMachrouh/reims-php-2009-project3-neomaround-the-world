@@ -1,9 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<body onload="window.location.href = '#openModal';">
+    <header class="header">
         <p class="slogan">Grow up and live new experiences</p>
 
         {# <li><a href="{{ path('home') }}">Home</a></li>
+    <div id="openModal" class="modalDialog">
+        <div>
+            <h3>This application has TCU</h3>
+            <p>To continue on this application, please accept the terms and conditions of use.</p>
+            <a href="{{ path ('cgu')}}" class="close" >See more</a>
+            <a href="#close" title="Close" class="close">I accept the TCU</a>
+        </div>
+    </div>
+
+    <div class="burger"></div>
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+      <div class="spinner diagonal part-1"></div>
+      <div class="spinner horizontal"></div>
+      <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+      <ul class="sidebarMenuInner">
+        <li><a href="{{ path('home') }}">Home</a></li>
         <li><a href="https://neoma-bs.fr/" target="_blank">Neoma BS</a></li>
         <li>{% if app.user %}
                  {{ app.user.email }}
@@ -24,10 +45,9 @@
         L.mapbox.styleLayer('mapbox://styles/massbsqts/ckk6o02eg0vvo17pna2aqgxmc').addTo(map);
         
         {% for country in countries %}
-            const country{{ country.id }} = L.circle([ {{country.latitude}},{{country.longitude}}], 125000,
-            { color: '#a8a099'
-            })
-                .bindPopup("<b><a href=country/{{ country.id }}/>{{ country.name }}</a></b>")
+
+            const country{{ country.id }} = L.marker([ {{country.latitude}},{{country.longitude}}])
+                .bindPopup("<b><a href=country/{{ country.id }}/><img class=image_popup src={{ country.image }}></a></b>")
                 .addTo(map);
         {% endfor %}
         {% for university in universities %}
@@ -39,6 +59,5 @@
                 .addTo(map);
         {% endfor %}
     </script>
-
-
+</body>
 {% endblock %}
