@@ -1,9 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<body onload="window.location.href = '#openModal';">
     <header class="header">
         <p class="slogan">Grow up and live new experiences</p>
     </header>
+
+    <div id="openModal" class="modalDialog">
+        <div>
+            <h3>This application has TCU</h3>
+            <p>To continue on this application, please accept the terms and conditions of use.</p>
+            <a href="{{ path ('cgu')}}" class="close" >See more</a>
+            <a href="#close" title="Close" class="close">I accept the TCU</a>
+        </div>
+    </div>
 
     <div class="burger"></div>
     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -49,4 +59,5 @@
                 .addTo(map);
         {% endfor %}
         </script>
+</body>
 {% endblock %}
