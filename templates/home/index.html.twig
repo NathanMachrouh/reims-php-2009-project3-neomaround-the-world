@@ -4,8 +4,8 @@
 <body onload="window.location.href = '#openModal';">
     <header class="header">
         <p class="slogan">Grow up and live new experiences</p>
-    </header>
 
+        {# <li><a href="{{ path('home') }}">Home</a></li>
     <div id="openModal" class="modalDialog">
         <div>
             <h3>This application has TCU</h3>
@@ -31,33 +31,33 @@
                  <a href="{{ path('app_logout') }}"> Logout</a>
             {% else %}
                 <a href="{{ path('app_login') }}"> Login</a>
-            {% endif %}</li>
-      </ul>
-    </div>
-    <button class="login"><a href ="{{path('app_login')}}"><img class="avatar" src="/build/images/login.1cdcfe7a.png"></a></button>
+            {% endif %}</li> #}
+      
+    
+    <a href="{{path('app_login')}}"><img class="avatar" src="{{ asset('build/images/login.png') }}" alt=""></a>
 
     <div id="mapid"></div>
-
     <script>
-        L.mapbox.accessToken = 'pk.eyJ1IjoiYWRlbGluZWI1MSIsImEiOiJja2loOWdlcmswNWNnMnptd2Jvb3l6MDA3In0.XbM3nj9P9Gd0daPf7tt4sg';
+        L.mapbox.accessToken = 'pk.eyJ1IjoibWFzc2JzcXRzIiwiYSI6ImNraWlyNGJhaDFmc3oyeXF1ajhua252MzUifQ.YPSJsoDm30aRVc6yxYUW8A';
         var map = L.mapbox.map('mapid')
             .setView([29.400000, 15.678929], 2.61);
         
-        L.mapbox.styleLayer('mapbox://styles/adelineb51/ckihb8xxq6djh19pmrtegcu7o').addTo(map);
+        L.mapbox.styleLayer('mapbox://styles/massbsqts/ckk6o02eg0vvo17pna2aqgxmc').addTo(map);
         
         {% for country in countries %}
+
             const country{{ country.id }} = L.marker([ {{country.latitude}},{{country.longitude}}])
                 .bindPopup("<b><a href=country/{{ country.id }}/><img class=image_popup src={{ country.image }}></a></b>")
                 .addTo(map);
         {% endfor %}
         {% for university in universities %}
-            const university{{ university.id }} = L.circle([ {{university.latitude}},{{university.longitude}}],10000, 
+            const university{{ university.id }} = L.circle([ {{university.latitude}},{{university.longitude}}],1000, 
                                                   { color:'red',
                                                     fillColor: '#f03',
                                                     fillOpacity: 0.5 })
                 .bindPopup("<b><a href=university/{{ university.id}}/>{{ university.name }}</a></b>")
                 .addTo(map);
         {% endfor %}
-        </script>
+    </script>
 </body>
 {% endblock %}
