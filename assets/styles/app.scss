@@ -30,7 +30,8 @@ body {
 
 }
 #mapid { 
-    min-height: 50vh;
+    min-height: 60vh;
+    
 }
 
 // Début Formulaire Login
@@ -94,8 +95,10 @@ input{
 .slogan{
     color: #8389a5;
     position: absolute;
-    bottom: 20%;
-    left: 17%;
+    bottom: 10%;
+    text-align: center;
+    left: 0;
+    right: 0;
 }
 
 #logo {
@@ -119,7 +122,6 @@ input{
 #menuToggle a{
     text-decoration: none;
     color: #a59f96;
-    transition: color 0.3s ease;
 }
 
 #menuToggle a:hover{
