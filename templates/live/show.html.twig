@@ -1,6 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      <ul id="menu">
+          <li><a href="{{ path('home') }}">Home</a></li>
+          <li><a href="{{ path('home') }}">Social Networks</a></li>
+          <li><a href="{{ path('cgu') }}">Settings</a></li>          
+          <li><a href="https://neoma-bs.fr/" target="_blank">About us</a></li>
+          <li>{% if app.user %}
+              {{ app.user.email }}
+            <a href="{{ path('app_logout') }}"> Logout</a>
+              {% else %}
+            <a href="{{ path('app_login') }}"> Login</a>
+              {% endif %}</li>
+      </ul>
+  </div>
+</nav>
 
 <div class="live">
 <h1>Life</h1>

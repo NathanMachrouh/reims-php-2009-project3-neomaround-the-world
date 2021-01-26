@@ -5,6 +5,26 @@
 <style>
 
 </style>
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      <ul id="menu">
+          <li><a href="{{ path('home') }}">Home</a></li>
+          <li><a href="{{ path('home') }}">Social Networks</a></li>
+          <li><a href="{{ path('cgu') }}">Settings</a></li>          
+          <li><a href="https://neoma-bs.fr/" target="_blank">About us</a></li>
+          <li>{% if app.user %}
+              {{ app.user.email }}
+            <a href="{{ path('app_logout') }}"> Logout</a>
+              {% else %}
+            <a href="{{ path('app_login') }}"> Login</a>
+              {% endif %}</li>
+      </ul>
+  </div>
+</nav>
 
 <div class="media-body">
     <h1>{{ country.name }}</h1>
@@ -12,12 +32,6 @@
 
 <img class="country_image" src="{{ country.image }}">
 <div class="example-wrapper">
-  {# <h1>Costs</h1>
-    <p>Average cost in this country for:</p>
-    <p>Food is around {{ cost.food }} €.</p>
-    <p>Transport during your stay will be {{ cost.transport }} €.</p>
-    <p>Accomodation can be like {{ cost.accomodation }} €.</p>
-    <p>Various extras like sport practice, social activities, etc... is most around {{ cost.extra }} €.</p> #}
 	<nav class="bottombar">
   <div class="iconbar">
     <a href="{{ path("cost_show", { id: country.id }) }}"><img src="{{ asset('build/images/cost.png') }}" alt=""></a>
@@ -25,16 +39,4 @@
     <a href="{{ path("opinions_show", { id: country.id }) }}"><img src="{{ asset('build/images/opinions.png') }}" alt=""></a>
   </div>
 	</nav>
-
-  {# <h1>Live</h1>
-    <p>{{ live.culture }}</p>
-    <p>{{ live.life }}</p>
-
-  <h1>Opinions</h1>
-
-    <p>{{ opinion.advice }}</p>
-    <p>{{ opinion.interview }}</p> #}
-  
-  {# <button class="button"><a href="{{ path('home') }}">Back home</a></button> #}
-    
 {% endblock %}
