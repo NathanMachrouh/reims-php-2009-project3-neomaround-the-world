@@ -12,6 +12,9 @@ body {
     font-size: 1.2rem;
     text-align: center;
 }
+h2{
+    color:#4e2780;
+}
 .mainTitle {
     margin: 0;
     width: 0;
@@ -265,7 +268,7 @@ a {
     display: flex;
     justify-content: center;
     position: fixed;
-    bottom: rem;
+    bottom: 5rem;
     width: 100%;
 }
     
@@ -285,12 +288,27 @@ a {
 
 .live{
     text-align: center;
+    padding: 1rem;
+}
+.live img{
+    width: 90%;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 20px 20px 40px #696969,
+    -20px -20px 40px #ffffff;
 }
 // fin live_show
 
 // Début cost_show
 .cost{
     text-align: center;
+}
+.cost img{
+    width: 90%;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 20px 20px 40px #696969,
+    -20px -20px 40px #ffffff;
 }
 // fin cost show
 
@@ -358,18 +376,12 @@ box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #4D267F; }
 // end-Modal //
-
-
 // pictures on templates
 .template_image{
     width: 100%;
     height: 50%;
 }
 
-TemplatesPictures
-h2{
-    color: black;
-}
 .login-slogan{
     color: #A79F98;
     position: relative;
