@@ -24,10 +24,10 @@ body {
 }
 .avatar{
     position: absolute;
-    width: 6%;
+    z-index: 1;
+    width: 1.5rem;
     bottom: 95%;
     left: 90%;
-
 }
 #mapid { 
     min-height: 60vh;
@@ -231,10 +231,17 @@ input{
 #menuToggle input:checked ~ ul{
   transform: none;
 }
+.leaflet-left .leaflet-control{
+    display: none;
+}
 // fin menu burger
 .country_image{
-    width: 100%;
-    height:55vh;
+    width: 90%;
+    height:35vh;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 20px 20px 40px #696969,
+    -20px -20px 40px #ffffff;
 }
 .login{
     text-align: center;
@@ -257,18 +264,23 @@ a {
 .bottombar {
     display: flex;
     justify-content: center;
-    background-color: #a79f98;  
     position: fixed;
-    bottom: 0;
+    bottom: rem;
     width: 100%;
 }
-
-.iconbar img{
+    
+.iconbar img {
     display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     padding: 1rem;
+    margin: 2.5rem;
+    border-radius: 30%;
+    background: linear-gradient(45deg, #b9b9b9, #dbdbdb);
+    box-shadow:  5px -5px 9px #525252,
+                 -5px 5px 9px #ffffff;
 }
+
 // Début live_show
 
 .live{
@@ -363,4 +375,7 @@ h2{
     position: relative;
     margin-top: 10%;
 }
-
+ .cgu{
+    color: #4D267F;
+    padding: 1rem;
+ }
