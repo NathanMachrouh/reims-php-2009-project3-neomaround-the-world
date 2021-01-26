@@ -22,7 +22,9 @@
         <span></span>
       <ul id="menu">
           <li><a href="{{ path('home') }}">Home</a></li>
-          <li><a href="https://neoma-bs.fr/" target="_blank">Neoma BS</a></li>
+          <li><a href="{{ path('home') }}">Social Networks</a></li>
+          <li><a href="{{ path('cgu') }}">Settings</a></li>          
+          <li><a href="https://neoma-bs.fr/" target="_blank">About us</a></li>
           <li>{% if app.user %}
               {{ app.user.email }}
             <a href="{{ path('app_logout') }}"> Logout</a>

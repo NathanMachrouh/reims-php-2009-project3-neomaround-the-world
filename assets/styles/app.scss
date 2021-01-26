@@ -30,13 +30,15 @@ body {
 
 }
 #mapid { 
-    min-height: 50vh;
+    min-height: 60vh;
+    
 }
 
 // Début Formulaire Login
 form>h1{
-    margin-top: 10%;
-    margin-bottom: 5%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    text-align: center;
 }
 label{
     display: grid;
@@ -46,16 +48,28 @@ label{
 form>input{
     display: grid;
     margin: auto;
+    width: 70%;
+    height: 2rem; 
     margin-bottom: 5%;
-    text-align: left;
+    text-align: center;
     font-size: 1.3rem;
-    border: 1px solid;
+    border-radius: 30px;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
 }
-form>button{
-    margin-left: 39%;
+.sign{
+    margin-top: 1.5rem;
+    border-radius: 50px;
+    box-shadow: inset 20px 20px 60px #bebebe,
+            inset -20px -20px 60px #ffffff;
+    left: 0;
+    right: 0;
+    width: 40%; 
+    height: 3rem; 
+    font-size: 1.2rem;     
+    cursor: pointer;
 }
 .registration{
-    margin-left: 5rem;
     margin-top: 5rem;
 }
 // Fin Formulaire Login
@@ -95,8 +109,10 @@ input{
 .slogan{
     color: #8389a5;
     position: absolute;
-    bottom: 20%;
-    left: 17%;
+    bottom: 10%;
+    text-align: center;
+    left: 0;
+    right: 0;
 }
 
 #logo {
@@ -120,7 +136,6 @@ input{
 #menuToggle a{
     text-decoration: none;
     color: #a59f96;
-    transition: color 0.3s ease;
 }
 
 #menuToggle a:hover{
