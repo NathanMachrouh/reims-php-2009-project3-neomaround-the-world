@@ -7,9 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Country;
-use APP\Entity\Cost;
-use APP\Entity\Live;
-use APP\Entity\Opinion;
+use App\Entity\Cost;
+use App\Entity\Live;
+use App\Entity\Opinion;
+use Symfony\Component\HttpFoundation\Request;
+use App\Form\OpinionType;
+use App\Repository\OpinionRepository;
 
 class CountryController extends AbstractController
 {
@@ -32,7 +35,7 @@ class CountryController extends AbstractController
     {
         $cost = $country->getCost();
         $live = $country->getLive();
-        $opinion = $country->getOpinions();
+        $opinion = $country->getOpinion();
 
         return $this->render('country/show.html.twig', [
             'country' => $country, 'cost' => $cost, 'live' => $live, 'opinion' => $opinion
@@ -66,15 +69,31 @@ class CountryController extends AbstractController
     }
 
     /**
-     * @Route("/country/{id}/opinions", name="opinions_show")
+     * @Route("/country/{id}/opinions", name="opinions_show", methods={"GET", "POST"})
      */
 
-    public function showOpinions(Country $country): Response
+    public function showOpinion(Country $country, Request $request, CountryRepository $countryRepository, OpinionRepository $opinionRepository, $id): Response
     {
-        $opinions = $country->getOpinions();
+        $opinion = new Opinion();
+        $form = $this->createForm(OpinionType::class, $opinion);
+        $form->handleRequest($request);
+        $user = $this->getUser();
 
+        $countries = $countryRepository->find($id);
+        $opinions = $opinionRepository->findBy(['country' => $id]);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $opinion->setUser($user);
+            $opinion->setCountry($country);
+            $entityManager->persist($opinion);
+            $entityManager->flush();
+        }
         return $this->render('opinion/show.html.twig', [
             'opinions' => $opinions,
+            'form' => $form -> createView(),
+            'user' => $user,
+            'country' => $countries,
         ]);
     }
 }

@@ -26,7 +26,7 @@ class OpinionController extends AbstractController
             $entityManager->persist($opinion);
             $entityManager->flush();
 
-            return $this->redirectToRoute('opinion_index');
+            return $this->redirectToRoute('opinion_show');
         }
         return $this->render('opinion/new.html.twig', [
             'form' => $form->createView()
