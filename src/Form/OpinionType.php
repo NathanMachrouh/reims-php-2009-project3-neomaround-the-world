@@ -18,6 +18,7 @@ class OpinionType extends AbstractType
         $builder
             ->add('advice')
             ->add('interview')
+
         ;
     }
 
