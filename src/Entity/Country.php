@@ -58,7 +58,7 @@ class Country
     /**
      * @ORM\OneToOne(targetEntity=Opinion::class, mappedBy="country")
      */
-    private ?Opinion $opinions;
+    private ?Opinion $opinion;
 
 
     public function __construct()
@@ -183,15 +183,15 @@ class Country
         return $this;
     }
 
-    public function getOpinions(): ?Opinion
+    public function getOpinion(): ?Opinion
     {
-        return $this->opinions;
+        return $this->opinion;
     }
 
     /*public function addOpinion(Opinion $opinion): self
     {
-        if (!$this->opinions->contains($opinion)) {
-            $this->opinions[] = $opinion;
+        if (!$this->opinion->contains($opinion)) {
+            $this->opinion[] = $opinion;
             $opinion->setCountry($this);
         }
 
