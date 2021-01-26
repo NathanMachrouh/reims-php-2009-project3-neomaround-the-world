@@ -4,11 +4,19 @@
 
 <div class="opinion">
 <h1>Opinions</h1>
-    <h2>All the advices</h2>
+<h2>All the advices</h2>
     <img class="template_image" type="image/png" src="{{ asset('build/images/opinion_advice.png') }}" />
-    <p>{{ opinions.advice }}</p>
+{% for opinion in opinions %}
+    <p>{{ user.email }} {{ opinion.advice }}    </p>
+{%  endfor %}
     <h2>All the interviews</h2>
     <img class="template_image" type="image/png" src="{{ asset('build/images/opinion_interview.png') }}" />
-    <p>{{ opinions.interview }}</p> 
-</div>    
+{% for opinion in opinions %}
+    <p><a href="{{ opinion.interview }}" target="blank">Interview</a></p> 
+{% endfor %}
+</div> 
+{% if app.user %}
+<h4>Add your opinion</h4>
+ {{ include ('opinion/_form.html.twig')}}
+{% endif %}
 {% endblock %}

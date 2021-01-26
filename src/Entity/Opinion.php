@@ -19,12 +19,12 @@ class Opinion
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $interview;
+    private ?string $interview;
 
     /**
      * @ORM\Column(type="text")
      */
-    private string $advice;
+    private ?string $advice;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
@@ -32,7 +32,7 @@ class Opinion
     private ?User $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="opinions")
+     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="opinion")
      */
     private ?Country $country;
 
