@@ -43,11 +43,11 @@
                 .addTo(map);
         {% endfor %}
         {% for university in universities %}
-            const university{{ university.id }} = L.circle([ {{university.latitude}},{{university.longitude}}],1000, 
+            const university{{ university.id }} = L.circle([ {{university.latitude}},{{university.longitude}}],30000, 
                                                   { color:'red',
                                                     fillColor: '#f03',
                                                     fillOpacity: 0.5 })
-                .bindPopup("<b><a href=university/{{ university.id}}/>{{ university.name }}</a></b>")
+                .bindPopup("<b>{{ university.name }}<a href=university/{{ university.id}}/><img class=image_popup src={{ university.image }}></a></b>")
                 .addTo(map);
         {% endfor %}
     </script>
