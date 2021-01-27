@@ -210,10 +210,8 @@ input{
 */
 #menu{
     position: absolute;
-    width: 300px;
+    width: 65%;
     margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
     background: #ffffff;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
@@ -245,8 +243,25 @@ input{
     margin-bottom: -0.4rem;
 }
 .logoburger{
-    height: 8rem;
-    width: 80%;
+    width: 75%;
+    margin: -2rem;
+    margin-top: -3rem;
+    margin-left: 1rem;
+}
+.borderburger{
+    background-color: #460161;
+    padding: 2rem;
+    height: 2.5rem;
+    margin-left: -2rem;
+}
+.borderburger2{
+    background-color: #460161;
+    padding: 1.8rem;
+    height: 0.3rem;
+    margin-left: -2rem;
+    margin-top: -0.3rem;
+    color: white;
+    text-align: left;
 }
 // fin menu burger
 .country_image{
