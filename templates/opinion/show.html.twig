@@ -30,7 +30,7 @@
 <h2>All the advices</h2>
     <img class="template_image" type="image/png" src="{{ asset('build/images/opinion_advice.png') }}" />
 {% for opinion in opinions %}
-    <p>{{ opinion.user.name }}  : "{{ opinion.advice }}"   </p>
+    <p><img class="massi" src="{{ asset('build/images/Massinta.jpeg') }}" alt="">{{ opinion.user.name }}  : "{{ opinion.advice }}"</p>
 {%  endfor %}
     <h2>All the interviews</h2>
     <img class="template_image" type="image/png" src="{{ asset('build/images/opinion_interview.png') }}" />
