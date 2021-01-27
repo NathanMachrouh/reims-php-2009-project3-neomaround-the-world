@@ -79,16 +79,19 @@ class CountryController extends AbstractController
         $form->handleRequest($request);
         $user = $this->getUser();
 
-        $countries = $countryRepository->find($id);
-        $opinions = $opinionRepository->findBy(['country' => $id]);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $opinion->setUser($user);
-            $opinion->setCountry($country);
+            $opinion=$opinion->setUser($user);
+            $opinion=$opinion->setCountry($country);
             $entityManager->persist($opinion);
             $entityManager->flush();
         }
+
+        $countries = $countryRepository->find($id);
+        $opinions = $opinionRepository->findBy(['country' => $id]);
+        
         return $this->render('opinion/show.html.twig', [
             'opinions' => $opinions,
             'form' => $form -> createView(),
