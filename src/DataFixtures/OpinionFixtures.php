@@ -34,6 +34,7 @@ class OpinionFixtures extends Fixture implements DependentFixtureInterface
             $opinion->setInterview($faker->url());
             $opinion->setAdvice($faker->text($maxNbChars = 500));
             $opinion->setCountry($this->getReference('country_' . $i));
+            $opinion->setUser($this->getReference('contributor_1'));
 
             $manager->persist($opinion);
         }
