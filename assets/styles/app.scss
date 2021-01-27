@@ -89,7 +89,7 @@ input{
     width: 70%;
     height: 2rem; 
     margin-bottom: 5%;
-    text-align: left;
+    text-align: center;
     font-size: 1.3rem;
     border-radius: 30px;
     box-shadow:  20px 20px 60px #bebebe,
@@ -263,6 +263,20 @@ input{
     color: white;
     text-align: left;
 }
+.borderburger2 img{
+    width: 2.5rem;
+    margin-top: -1rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.massi{
+    width: 2.5rem;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 20px 20px 40px #696969,
+    -20px -20px 40px #ffffff;
+    margin-right: 0.5rem;
+}
 // fin menu burger
 .country_image{
     width: 90%;
@@ -343,6 +357,15 @@ a {
     text-align: center;
     padding: 1rem;
 }
+#opinion_advice{
+    text-align: center;
+    width: 22rem;
+    height: 6rem;
+    border-radius: 30px;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+}
+
 // fin opinion_show
 
 // popup //
