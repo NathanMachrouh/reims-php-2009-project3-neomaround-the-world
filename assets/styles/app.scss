@@ -126,7 +126,6 @@ input{
 }
 // début menu burger
 #menuToggle{
-
     display: block;
     position: relative;
     top: -120px;
@@ -139,6 +138,7 @@ input{
 #menuToggle a{
     text-decoration: none;
     color: #a59f96;
+    font-size: 14px;
 }
 
 #menuToggle a:hover{
@@ -232,10 +232,21 @@ input{
 * And let's slide it in from the left
 */
 #menuToggle input:checked ~ ul{
-  transform: none;
+    transform: none;
+    left: 2rem;
 }
 .leaflet-left .leaflet-control{
     display: none;
+}
+.imgburger{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: -0.4rem;
+}
+.logoburger{
+    height: 8rem;
+    width: 80%;
 }
 // fin menu burger
 .country_image{
@@ -315,6 +326,7 @@ a {
 // début opinion_show
 .opinion{
     text-align: center;
+    padding: 1rem;
 }
 // fin opinion_show
 
@@ -378,8 +390,13 @@ box-shadow: 1px 1px 3px #000;
 // end-Modal //
 // pictures on templates
 .template_image{
-    width: 100%;
+    width: 95%;
     height: 50%;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 20px 20px 40px #696969,
+    -20px -20px 40px #ffffff;
+
 }
 
 .login-slogan{
