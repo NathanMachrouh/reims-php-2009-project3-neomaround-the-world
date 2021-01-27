@@ -24,12 +24,15 @@ class UserFixtures extends Fixture
         $contributor = new User();
         $contributor->setEmail('massinta.aitbraham@gmail.com');
         $contributor->setRoles(['ROLE_CONTRIBUTOR']);
+        $contributor->setName('Mass');
         $contributor->setPassword($this->passwordEncoder->encodePassword(
             $contributor,
             'password'
-        ));
+        )
+        );
 
         $manager->persist($contributor);
+        $this->addReference('contributor_1', $contributor);
 
         // Création d’un utilisateur de type “administrateur”
         $admin = new User();
