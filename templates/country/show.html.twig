@@ -12,20 +12,23 @@
         <span></span>
         <span></span>
       <ul id="menu">
-          <li><a href="{{ path('home') }}">Home</a></li>
-          <li><a href="{{ path('home') }}">Social Networks</a></li>
-          <li><a href="{{ path('cgu') }}">Settings</a></li>          
-          <li><a href="https://neoma-bs.fr/" target="_blank">About us</a></li>
+      <div class="borderburger">
+      </div>
+        <li><a href="{{ path('home') }}"><img class="logoburger" src="{{ asset('build/images/logo.png') }}"></a></li>
+      <div class="borderburger2">{% if app.user %} {{app.user.name}} {% endif %}</div>
+
+          <li><a href="{{ path('home') }}"><img class="imgburger" src="{{ asset('build/images/home.png') }}">Home</a></li>
+          <li><a href="{{ path('home') }}"><img class="imgburger" src="{{ asset('build/images/social.png') }}">Social Networks</a></li>
+          <li><a href="{{ path('cgu') }}"><img class="imgburger" src="{{ asset('build/images/parameter.png') }}">Settings</a></li>          
+          <li><a href="https://neoma-bs.fr/" target="_blank"><img class="imgburger" src="{{ asset('build/images/more.png') }}">About us</a></li>
           <li>{% if app.user %}
-              {{ app.user.email }}
-            <a href="{{ path('app_logout') }}"> Logout</a>
+            <a href="{{ path('app_logout') }}"><img class="imgburger" src="{{ asset('build/images/logout.png') }}">Logout</a>
               {% else %}
-            <a href="{{ path('app_login') }}"> Login</a>
+            <a href="{{ path('app_login') }}"><img class="imgburger" src="{{ asset('build/images/logout.png') }}"> Login</a>
               {% endif %}</li>
       </ul>
   </div>
 </nav>
-
 <div class="media-body">
     <h1>Welcome to {{ country.name }}</h1>
 </div>
