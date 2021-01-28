@@ -269,14 +269,6 @@ input{
     border-radius: 50%;
     margin-right: 1rem;
 }
-.massi{
-    width: 2.5rem;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 20px 20px 40px #696969,
-    -20px -20px 40px #ffffff;
-    margin-right: 0.5rem;
-}
 // fin menu burger
 .country_image{
     width: 90%;
@@ -355,7 +347,7 @@ a {
 // début opinion_show
 .opinion{
     text-align: center;
-    padding: 1rem;
+    margin-top: -3rem;
 }
 #opinion_advice{
     text-align: center;
@@ -365,6 +357,24 @@ a {
     box-shadow:  20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
 }
+.interview_text{
+    font-size: 14px;
+    width: 80%;
+    margin-left: 2rem;
+    padding:1rem;
+    margin-top: 1rem;
+    text-align: right;
+    border-radius: 15px;
+    background-color: #eff1f5;
+    box-shadow: 10px 10px 20px #696969,
+    -10px -10px 20px #ffffff;
+}
+.massi{
+    width: 2.8rem;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+
 
 // fin opinion_show
 
@@ -409,20 +419,20 @@ a {
 }
 
 .close {
-background: #606061;
-color: #FFFFFF;
-line-height: 25px;
-text-align: center;
-float: right;
-width: 50%;
-text-decoration: none;
-font-weight: bold;
--webkit-border-radius: 12px;
--moz-border-radius: 12px;
-border-radius: 12px;
--moz-box-shadow: 1px 1px 3px #000;
--webkit-box-shadow: 1px 1px 3px #000;
-box-shadow: 1px 1px 3px #000;
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    text-align: center;
+    float: right;
+    width: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #4D267F; }
 // end-Modal //
@@ -436,13 +446,20 @@ box-shadow: 1px 1px 3px #000;
     -20px -20px 40px #ffffff;
 
 }
-
 .login-slogan{
     color: #A79F98;
     position: relative;
     margin-top: 10%;
 }
- .cgu{
+.cgu{
     color: #4D267F;
     padding: 1rem;
- }
+}
+.university{
+    width: 90%;
+    height:35vh;
+    border-radius: 26px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 20px 20px 40px #696969,
+    -20px -20px 40px #ffffff;
+}
