@@ -13,7 +13,7 @@
       <div class="borderburger">
       </div>
         <li><a href="{{ path('home') }}"><img class="logoburger" src="{{ asset('build/images/logo.png') }}"></a></li>
-      <div class="borderburger2">{% if app.user %} {{app.user.name}} {% endif %}</div>
+      <div class="borderburger2">{% if app.user %}<img src="{{ asset('build/images/Massinta.jpeg') }}" alt=""> {{app.user.name}} {% endif %}</div>
 
           <li><a href="{{ path('home') }}"><img class="imgburger" src="{{ asset('build/images/home.png') }}">Home</a></li>
           <li><a href="{{ path('home') }}"><img class="imgburger" src="{{ asset('build/images/social.png') }}">Social Networks</a></li>
